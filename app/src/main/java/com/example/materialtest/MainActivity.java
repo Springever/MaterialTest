@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -43,6 +44,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        TabLayout mTabLayout = (TabLayout) findViewById(R.id.tabLayout);
+        mTabLayout.addTab(mTabLayout.newTab().setText("水果"));
+        mTabLayout.addTab(mTabLayout.newTab().setText("干果"));
+        mTabLayout.addTab(mTabLayout.newTab().setText("肉类"));
+        //mTabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+        //mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);//从左到右排开
+        mTabLayout.setTabMode(TabLayout.MODE_FIXED);//从左到右排开
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         NavigationView navView = (NavigationView) findViewById(R.id.nav_view);
         ActionBar actionBar = getSupportActionBar();
